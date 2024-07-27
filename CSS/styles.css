@@ -2,8 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
+/* Navigation styles */
 /* Navigation styles */
 nav {
     display: flex;
@@ -13,18 +17,101 @@ nav {
     background-color: #f8f8f8;
 }
 
-.logo-icon{
-  border:1px solid;
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    border: 1px solid;
+    margin-right: 1rem;
 }
 
 .nav-container {
-    display:flex;
-
+    display: flex;
+    border: 1px solid;  /* Tambahkan border untuk kotak luar */
 }
 
-.nav-item{
-    border: 1px solid;
-    padding: 8px solid;
+.nav-item {
+    padding: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    flex: 1;  /* Membuat setiap item mengambil ruang yang sama */
+    text-align: center;  /* Pusatkan teks */
+    border-right: 1px solid;  /* Tambahkan garis pemisah */
+}
+
+.nav-item:last-child {
+    border-right: none;  /* Hilangkan garis pemisah untuk item terakhir */
+}
+
+.main-content-banner img {
+    width: 100%; /* Sesuaikan lebar gambar dengan lebar container */
+    height: auto; /* Sesuaikan tinggi gambar secara proporsional */
+    display: block; /* Menghilangkan spasi kosong di bawah gambar */
+}
+
+.paragraf-content{
+    color: #808080; 
+    font-style: italic;
+    word-wrap: break-word; /* Memastikan kata panjang terbungkus dengan baik */
+    width: 350px;
+}
+/* Sisanya dari CSS tetap sama */
+
+/* Main content styles */
+/* Main content styles */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.main-content-item {
+    width: 45%; /* Mempertahankan lebar sekitar 45% dari container */
+    margin-right: -20px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+/* Form styles */
+.main-content-item form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content-item input,
+.main-content-item select,
+.main-content-item button {
+    width: 90%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.main-content-item button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Opsional: menyesuaikan ukuran font dan tinggi elemen */
+.main-content-item input,
+.main-content-item select,
+.main-content-item button {
+    font-size: 16px;
+    height: 40px;
+}
+
+/* Existing styles remain the same */
+/* ... */
+
+.main-title {
+    text-align: center;
 }
 
 :root {
@@ -103,3 +190,8 @@ input:checked + .slider:before {
 .main-title{
     text-align: center;
 }
+
+.main-content{
+    display: flex;
+}
+
