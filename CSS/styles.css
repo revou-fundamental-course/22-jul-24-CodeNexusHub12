@@ -7,8 +7,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Navigation styles */
-/* Navigation styles */
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -22,60 +21,116 @@ nav {
     align-items: center;
 }
 
-.logo-icon {
-    border: 1px solid;
-    margin-right: 1rem;
+@font-face {
+    font-family: 'Brownist';
+    src: url('Asset/Brownist.otf') format('opentype');
+    font-weight: normal; 
+    font-style: normal; 
 }
+
+.logo-icon {
+    font-family: 'Brownist';
+    font-size: 36px; 
+    background: linear-gradient(to right, blue, lightblue); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    color: transparent; 
+    text-shadow: none; 
+    font-size: 40px;
+    margin-left: 70px;
+    margin-top: -20px;
+}
+
 
 .nav-container {
     display: flex;
-    border: 1px solid;  /* Tambahkan border untuk kotak luar */
+    border: 1px solid black; 
+    width: 30%;
+    margin-right: 50px;
 }
 
 .nav-item {
     padding: 8px;
     text-decoration: none;
-    color: var(--text-color);
-    flex: 1;  /* Membuat setiap item mengambil ruang yang sama */
-    text-align: center;  /* Pusatkan teks */
-    border-right: 1px solid;  /* Tambahkan garis pemisah */
+    color: black; 
+    flex: 1; 
+    text-align: center; 
+    border-right: 1px solid black; 
 }
 
 .nav-item:last-child {
-    border-right: none;  /* Hilangkan garis pemisah untuk item terakhir */
+    border-right: none; 
+}
+
+[data-theme="dark"] .nav-container,
+[data-theme="dark"] .nav-item,
+[data-theme="dark"] .logo-icon {
+    border-color: black; 
+    color: black; 
 }
 
 .main-content-banner img {
-    width: 100%; /* Sesuaikan lebar gambar dengan lebar container */
-    height: auto; /* Sesuaikan tinggi gambar secara proporsional */
-    display: block; /* Menghilangkan spasi kosong di bawah gambar */
+    width: 87%; 
+    height: auto; 
+    display: block; 
+    margin-left: 60px;
 }
 
-.paragraf-content{
-    color: #808080; 
-    font-style: italic;
-    word-wrap: break-word; /* Memastikan kata panjang terbungkus dengan baik */
-    width: 350px;
+.paragraf-content {
+    color: gray; 
+    font-style: italic; 
+    word-wrap: break-word; 
+    width: 350px; 
+    margin-left: 60px;
 }
-/* Sisanya dari CSS tetap sama */
 
-/* Main content styles */
-/* Main content styles */
+.item-klien {
+    display: flex; 
+    align-items: center; 
+}
+
+.profil-klien {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    margin-right: 15px; 
+    margin-left: 50px;
+    background-image: url('Asset/profil-contact.jpg'); 
+}
+
+[data-theme="dark"] .profil-klien {
+    background-image: url('Asset/profil-contact2.png'); /* Gambar untuk mode dark */
+}
+
+.item-info-klien {
+    font-family: 'Franklin Gothic Book', Arial, sans-serif;
+}
+
+.item-klien h3,
+.item-klien p {
+    margin: 0; 
+    padding: 0; 
+}
+
+
 .main-content {
     display: flex;
     justify-content: space-between;
     padding: 2rem;
 }
 
-.main-content-item {
-    width: 45%; /* Mempertahankan lebar sekitar 45% dari container */
-    margin-right: -20px;
+
+.main-content-right {
+    width: 90%; 
+    margin-right: 50px;
     border: 1px solid black;
     padding: 20px;
+    background-color: #f0f0f0; 
+    font-family: 'Franklin Gothic Book', Arial, sans-serif;
 }
 
-/* Form styles */
-.main-content-item form {
+
+.main-content-right form {
     display: flex;
     flex-direction: column;
     border: 2px solid black;
@@ -83,32 +138,53 @@ nav {
     box-sizing: border-box;
 }
 
-.main-content-item input,
-.main-content-item select,
-.main-content-item button {
-    width: 90%;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    box-sizing: border-box;
+#contact-us h2,
+#contact-us p {
+    margin-bottom: 30px; 
 }
 
-.main-content-item button {
+.input-class {
+    margin-top: 80px; 
+}
+
+.input-class label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+    color: var(--text-color); 
+}
+
+.main-content-right input,
+.main-content-right select,
+.main-content-right button {
+    width: 90%;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
+    font-size: 16px;
+    height: 40px;
+}
+
+.main-content-right button {
     background-color: var(--primary-color);
     color: white;
     border: none;
     cursor: pointer;
 }
 
-/* Opsional: menyesuaikan ukuran font dan tinggi elemen */
-.main-content-item input,
-.main-content-item select,
-.main-content-item button {
-    font-size: 16px;
-    height: 40px;
+[data-theme="dark"] .main-content-right {
+    border-color: white; 
+    background-color: black;
+    color: white; 
 }
 
-/* Existing styles remain the same */
-/* ... */
+[data-theme="dark"] .main-content-right form {
+    border-color: white; 
+    background-color: black; 
+}
+
 
 .main-title {
     text-align: center;
@@ -118,12 +194,21 @@ nav {
     --primary-color: #007bff;
     --background-color: #ffffff;
     --text-color: #333333;
+    --feature-number-bg-light: black; /* Background angka untuk mode light */
+    --feature-number-bg-dark: white;  /* Background angka untuk mode dark */
+    --feature-number-color-light: white; /* Warna teks angka untuk mode light */
+    --feature-number-color-dark: black;  /* Warna teks angka untuk mode dark */
+    --theme-label-color: black;
 }
 
 [data-theme="dark"] {
     --primary-color: #0056b3;
     --background-color: #333333;
     --text-color: #ffffff;
+}
+
+[data-theme="dark"] .main-content-right {
+    border-color: white; 
 }
 
 body {
@@ -135,14 +220,30 @@ body {
 /* Styling untuk toggle switch */
 .theme-switch-wrapper {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: center; 
+    margin: none; 
+}
+
+.theme-label {
+    margin-bottom: 1px; 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: var(--theme-label-color); 
+    margin-top: -10px;
+    margin-left: 450px;
+}
+
+[data-theme="dark"] {
+    --theme-label-color: blue; 
 }
 
 .theme-switch {
     display: inline-block;
-    height: 34px;
+    height: 25px;
     position: relative;
-    width: 60px;
+    width: 50px;
+    margin-left: 450px;
 }
 
 .theme-switch input {
@@ -162,13 +263,13 @@ body {
 
 .slider:before {
     background-color: #fff;
-    bottom: 4px;
+    bottom: 1px;
     content: "";
-    height: 26px;
-    left: 4px;
+    height: 23px;
+    left: 1px;
     position: absolute;
     transition: .4s;
-    width: 26px;
+    width: 23px;
 }
 
 input:checked + .slider {
@@ -187,11 +288,49 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-.main-title{
+.main-title {
     text-align: center;
 }
 
-.main-content{
+.main-content {
     display: flex;
 }
 
+.footer-class{
+    font-family: 'Franklin Gothic Book', Arial, sans-serif;
+    margin-left: 90px;
+    width: 52%;
+}
+
+.feature-class {
+    padding: 20px; 
+}
+
+.feature-class p {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 15px; 
+    word-wrap: break-word; 
+    width: 350px; 
+}
+
+.feature-number {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 50px; 
+    height: 40px; 
+    border-radius: 50%; 
+    background-color: var(--feature-number-bg-light); /* Background warna berdasarkan tema */
+    color: var(--feature-number-color-light); /* Warna teks berdasarkan tema */
+    font-weight: bold; 
+    margin-right: 20px; 
+    text-align: center; 
+    margin-left:-20px;
+}
+
+/* Styling untuk tema gelap */
+[data-theme="dark"] .feature-number {
+    background-color: var(--feature-number-bg-dark); /* Background warna untuk mode gelap */
+    color: var(--feature-number-color-dark); /* Warna teks untuk mode gelap */
+}
