@@ -53,3 +53,54 @@ document.querySelector('.theme-switch input').addEventListener('change', (event)
     document.body.setAttribute('data-theme', theme);
     profilImg.src = theme === 'dark' ? 'Asset/profil-contact2.png' : 'Asset/profil-contact.jpg';
 });
+
+function validateEmail() {
+    const emailInput = document.getElementById('email');
+    const emailError = document.getElementById('email-error');
+    const emailPattern = /^(.*@(gmail\.com|.*\.id))$/;
+
+    if (!emailPattern.test(emailInput.value)) {
+        emailError.style.display = 'block'; 
+        return false; 
+    } else {
+        emailError.style.display = 'none'; 
+        return true; 
+    }
+}
+
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active'); 
+}
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const loading = document.getElementById('loading');
+    const successMessage = document.getElementById('successMessage');
+    const homeSection = document.getElementById('home');
+
+    loading.style.display = 'block'; 
+    successMessage.style.display = 'none'; 
+
+    setTimeout(() => {
+        loading.style.display = 'none'; 
+        
+        
+        homeSection.style.display = 'none';
+        successMessage.style.display = 'block'; 
+    }, 2000); // Tampilkan selama 2 detik
+});
+
+document.getElementById('backButton').addEventListener('click', function() {
+    const successMessage = document.getElementById('successMessage');
+    const homeSection = document.getElementById('home');
+
+    successMessage.style.display = 'none'; 
+    homeSection.style.display = 'block'; 
+
+    document.querySelector('form').reset();
+});

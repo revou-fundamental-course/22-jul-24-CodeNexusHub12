@@ -28,6 +28,13 @@ nav {
     align-items: center;
 }
 
+@font-face {
+    font-family: 'Brownist';
+    src: url('Asset/Brownist.otf') format('opentype');
+    font-weight: normal; 
+    font-style: normal; 
+}
+
 .logo-icon {
     font-family: 'Brownist';
     font-size: 36px; 
@@ -38,6 +45,11 @@ nav {
     text-shadow: none; 
     margin-left: 70px;
     margin-top: -20px;
+}
+
+.main-title{
+    margin-top: 30px;
+    font-family: 'Franklin Gothic Book', Arial, sans-serif;
 }
 
 .nav-container {
@@ -56,11 +68,17 @@ nav {
     border-right: 1px solid black; 
 }
 
+
+.nav-item:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+
 .nav-item:last-child {
     border-right: none; 
 }
 
-/* Gaya untuk tema gelap */
 [data-theme="dark"] .nav-container,
 [data-theme="dark"] .nav-item,
 [data-theme="dark"] .logo-icon {
@@ -68,7 +86,6 @@ nav {
     color: black; 
 }
 
-/* Gambar dan konten */
 .main-content-banner img {
     width: 87%; 
     height: auto; 
@@ -81,12 +98,14 @@ nav {
     font-style: italic; 
     word-wrap: break-word; 
     width: 350px; 
-    margin-left: 60px;
+    margin-left: 80px;
+    margin-top: 30px;
 }
 
 .item-klien {
     display: flex; 
     align-items: center; 
+    margin-top: 30px;
 }
 
 .profil-klien {
@@ -112,21 +131,14 @@ nav {
     padding: 0; 
 }
 
-/* Konten utama */
 .main-content {
     display: flex;
     justify-content: space-between;
     padding: 2rem;
-    flex-wrap: wrap; /* Tambahkan ini untuk responsivitas */
-}
-
-.main-content-left,
-.main-content-right {
-    flex: 1; /* Menyesuaikan ukuran */
-    min-width: 300px; /* Ukuran minimum */
 }
 
 .main-content-right {
+    width: 90%; 
     margin-right: 50px;
     border: 1px solid black;
     padding: 20px;
@@ -134,7 +146,6 @@ nav {
     font-family: 'Franklin Gothic Book', Arial, sans-serif;
 }
 
-/* Formulir */
 .main-content-right form {
     display: flex;
     flex-direction: column;
@@ -179,7 +190,6 @@ nav {
     cursor: pointer;
 }
 
-/* Gaya untuk tema gelap */
 [data-theme="dark"] .main-content-right {
     border-color: white; 
     background-color: black;
@@ -195,7 +205,6 @@ nav {
     text-align: center;
 }
 
-/* Variabel tema */
 :root {
     --primary-color: #007bff;
     --background-color: #ffffff;
@@ -213,11 +222,21 @@ nav {
     --text-color: #ffffff;
 }
 
-/* Tema switcher */
+[data-theme="dark"] .main-content-right {
+    border-color: white; 
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
 .theme-switch-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    margin: none; 
 }
 
 .theme-label {
@@ -226,6 +245,7 @@ nav {
     font-weight: bold; 
     color: var(--theme-label-color); 
     margin-top: -10px;
+    margin-left: 450px;
 }
 
 [data-theme="dark"] {
@@ -237,6 +257,7 @@ nav {
     height: 25px;
     position: relative;
     width: 50px;
+    margin-left: 450px;
 }
 
 .theme-switch input {
@@ -288,7 +309,6 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* Footer */
 .footer-class {
     font-family: 'Franklin Gothic Book', Arial, sans-serif;
     margin-left: 90px;
@@ -327,38 +347,83 @@ input:checked + .slider:before {
     color: var(--feature-number-color-dark);
 }
 
-/* Media Queries untuk Responsivitas */
-@media (max-width: 768px) {
+.error-message {
+    color: red;
+    display: none; 
+    font-size: 12px; 
+}
+
+.section {
+    display: none; 
+}
+
+.section.active {
+    display: block; 
+}
+
+.loading {
+    display: none; 
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 1000; 
+}
+
+
+/* Media Queries untuk Responsivitas di Layar 1080x2400 */
+@media (max-width: 1080px) and (max-height: 2400px) {
     .nav-container {
-        width: 100%; /* Mengubah lebar navigasi */
-        flex-direction: column; /* Mengatur arah flex menjadi kolom */
-        margin-right: 0; /* Menghilangkan margin kanan */
+        width: 100%; 
+        flex-direction: column; 
+        margin-right: 0; 
     }
 
     .nav-item {
-        border-right: none; /* Menghilangkan border pada item terakhir */
-        margin: 5px 0; /* Menambahkan margin vertikal */
+        border-right: none;
+        margin: 5px 0; 
     }
 
     .main-content {
-        flex-direction: column; /* Mengatur arah flex menjadi kolom */
-        padding: 1rem; /* Menyesuaikan padding */
+        flex-direction: column; 
+        padding: 1rem; 
     }
 
-    .main-content-left,
     .main-content-right {
-        width: 100%; /* Mengatur lebar menjadi 100% */
-        margin-right: 0; /* Menghilangkan margin kanan */
-        margin-left: 0; /* Menghilangkan margin kiri */
+        width: 100%; 
+        margin-right: 0; 
+        margin-left: 0; 
     }
 
     .footer-class {
-        margin-left: 0; /* Menghilangkan margin kiri */
-        width: 100%; /* Mengatur lebar footer menjadi 100% */
+        margin-left: 0; 
+        width: 100%;
     }
 
     .theme-label,
     .theme-switch {
-        margin-left: 0; /* Menghilangkan margin kiri */
+        margin-left: 0; 
     }
 }
+
+
+
+
+
