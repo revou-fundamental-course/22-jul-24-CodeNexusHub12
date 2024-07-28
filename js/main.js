@@ -68,6 +68,23 @@ function validateEmail() {
     }
 }
 
+function validateForm() {
+    const inputs = document.querySelectorAll('input[required], select[required]');
+    let isValid = true;
+
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            isValid = false;
+        }
+    });
+
+    if (!validateEmail()) {
+        isValid = false;
+    }
+
+    return isValid;
+}
+
 function showSection(sectionId) {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
