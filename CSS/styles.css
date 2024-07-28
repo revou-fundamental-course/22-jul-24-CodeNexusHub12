@@ -7,7 +7,6 @@ body {
     transition: all 0.3s ease;
 }
 
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -40,7 +39,6 @@ nav {
     margin-left: 70px;
     margin-top: -20px;
 }
-
 
 .nav-container {
     display: flex;
@@ -99,7 +97,7 @@ nav {
 }
 
 [data-theme="dark"] .profil-klien {
-    background-image: url('Asset/profil-contact2.png'); /* Gambar untuk mode dark */
+    background-image: url('Asset/profil-contact2.png');
 }
 
 .item-info-klien {
@@ -112,13 +110,11 @@ nav {
     padding: 0; 
 }
 
-
 .main-content {
     display: flex;
     justify-content: space-between;
     padding: 2rem;
 }
-
 
 .main-content-right {
     width: 90%; 
@@ -128,7 +124,6 @@ nav {
     background-color: #f0f0f0; 
     font-family: 'Franklin Gothic Book', Arial, sans-serif;
 }
-
 
 .main-content-right form {
     display: flex;
@@ -185,7 +180,6 @@ nav {
     background-color: black; 
 }
 
-
 .main-title {
     text-align: center;
 }
@@ -194,10 +188,10 @@ nav {
     --primary-color: #007bff;
     --background-color: #ffffff;
     --text-color: #333333;
-    --feature-number-bg-light: black; /* Background angka untuk mode light */
-    --feature-number-bg-dark: white;  /* Background angka untuk mode dark */
-    --feature-number-color-light: white; /* Warna teks angka untuk mode light */
-    --feature-number-color-dark: black;  /* Warna teks angka untuk mode dark */
+    --feature-number-bg-light: black;
+    --feature-number-bg-dark: white;
+    --feature-number-color-light: white;
+    --feature-number-color-dark: black;
     --theme-label-color: black;
 }
 
@@ -217,7 +211,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Styling untuk toggle switch */
 .theme-switch-wrapper {
     display: flex;
     flex-direction: column;
@@ -264,12 +257,16 @@ body {
 .slider:before {
     background-color: #fff;
     bottom: 1px;
-    content: "";
+    content: "☀️";  /* Sun symbol */
     height: 23px;
+    width: 23px;
     left: 1px;
     position: absolute;
     transition: .4s;
-    width: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
 }
 
 input:checked + .slider {
@@ -277,7 +274,10 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
+    content: "🌙";  /* Moon symbol */
     transform: translateX(26px);
+    background-color: #333;
+    color: #fff;
 }
 
 .slider.round {
@@ -286,14 +286,6 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
-}
-
-.main-title {
-    text-align: center;
-}
-
-.main-content {
-    display: flex;
 }
 
 .footer-class{
@@ -321,16 +313,48 @@ input:checked + .slider:before {
     width: 50px; 
     height: 40px; 
     border-radius: 50%; 
-    background-color: var(--feature-number-bg-light); /* Background warna berdasarkan tema */
-    color: var(--feature-number-color-light); /* Warna teks berdasarkan tema */
+    background-color: var(--feature-number-bg-light);
+    color: var(--feature-number-color-light);
     font-weight: bold; 
     margin-right: 20px; 
     text-align: center; 
     margin-left:-20px;
 }
 
-/* Styling untuk tema gelap */
 [data-theme="dark"] .feature-number {
-    background-color: var(--feature-number-bg-dark); /* Background warna untuk mode gelap */
-    color: var(--feature-number-color-dark); /* Warna teks untuk mode gelap */
+    background-color: var(--feature-number-bg-dark);
+    color: var(--feature-number-color-dark);
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .logo-icon {
+        font-size: 18px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        padding: 10px;
+    }
+    
+    .main-content-right {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .footer-class {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .profil-klien {
+        width: 40px;
+        height: 40px;
+    }
 }
