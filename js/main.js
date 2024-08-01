@@ -68,11 +68,12 @@ function validateEmail() {
         return true; 
     }
 }
-
+// Fungsi untuk memvalidasi formulir
 function validateForm() {
+    // Mengambil semua input dan select dengan atribut required
     const inputs = document.querySelectorAll('input[required], select[required]');
     let isValid = true;
-
+// Mengecek setiap input dan select
     inputs.forEach(input => {
         if (!input.value.trim()) {
             isValid = false;
@@ -85,7 +86,7 @@ function validateForm() {
 
     return isValid;
 }
-
+// Fungsi untuk menampilkan bagian tertentu dari halaman
 function showSection(sectionId) {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
@@ -93,7 +94,7 @@ function showSection(sectionId) {
     });
     document.getElementById(sectionId).classList.add('active'); 
 }
-
+// Event listener untuk formulir saat dikirim
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
@@ -112,7 +113,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
         successMessage.style.display = 'block'; 
     }, 2000); // Tampilkan selama 2 detik
 });
-
+// Event listener untuk tombol kembali di pesan sukses
 document.getElementById('backButton').addEventListener('click', function() {
     const successMessage = document.getElementById('successMessage');
     const homeSection = document.getElementById('home');
@@ -123,12 +124,15 @@ document.getElementById('backButton').addEventListener('click', function() {
     document.querySelector('form').reset();
 });
 
+// Variabel untuk slider
 var index = 0;
 var slides = document.querySelectorAll(".slides");
 var dot = document.querySelectorAll(".dot");
 
+// Fungsi untuk mengganti slide secara otomatis
 function changeSlide(){
 
+// Menyesuaikan index jika kurang dari 0 atau lebih dari jumlah slide
   if(index<0){
     index = slides.length-1;
   }
@@ -147,8 +151,10 @@ function changeSlide(){
   
   index++;
   
+  // Menentukan interval untuk mengganti slide setiap 3 detik
   setTimeout(changeSlide,3000);
   
 }
 
+// Memulai fungsi changeSlide
 changeSlide();

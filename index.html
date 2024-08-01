@@ -2,26 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- responsiv -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nico Project Agent</title>
+    <!-- source css -->
     <link rel="stylesheet" type="text/css" href="CSS/styles.css">
     
 </head>
 
 <body>
+    <!-- Navigasi utama -->
     <nav>
+        <!-- Bagian kiri dari navigasi dengan logo dan switch tema -->
         <section class="left-section">
             <header class="logo-icon">
+                 <!-- Logo travel -->
                 <img src="Asset/tittle.png" alt="go travel logo">
             </header>
             <div class="theme-switch-wrapper">
                 <p class="theme-label">Light/Dark</p>
                 <label class="theme-switch" for="checkbox">
+                    <!-- Switch untuk mengganti tema light/dark -->
                     <input type="checkbox" id="checkbox" />
                     <div class="slider round"></div>
                 </label>
             </div>
         </section>
+        <!-- Bagian kanan dari navigasi dengan link -->
         <section class="nav-container">
             <a href="#home" class="nav-item" onclick="showSection('home')">Home</a>
             <a href="#our-packages" class="nav-item" onclick="showSection('our-packages')">Our Packages</a>
@@ -29,8 +36,10 @@
         </section>
     </nav>
 
+<!-- Bagian utama untuk konten halaman -->
 <main id="home" class="section active"></main>
 
+ <!-- Judul utama -->
     <article class="main-title">
         <header>
             <h1>Your Trusted Travel Agent's</h1>
@@ -39,10 +48,11 @@
             <br>
             Your happines is our happines</p>
     </article>
-    
+    <!-- Konten utama -->
     <section class="main-content">
         <header class="main-content-left">
             <div class="main-content-banner">
+                 <!-- Slider gambar -->
                 <div id="slider">  
                 <div class="slides">  
                   <img src="Asset/indonesia.jpg" >
@@ -63,7 +73,8 @@
                 <div class="slides">  
                   <img src="Asset/rusia.jpg" >
                 </div>  
-                  
+
+                  <!-- Indikator slider -->
                   <div id="dot">
                     <span class="dot"></span>
                     <span class="dot"></span>
@@ -77,6 +88,7 @@
                 <p>"Liburan jadi menyenangkan bersama travel Agentku"</p>
             </article>
             <article>
+                <!-- Informasi klien -->
                 <div class="item-klien">
                     <img id="profilKlien" class="profil-klien" alt="Profil Klien">
                     <div class="item-info-klien">
@@ -88,6 +100,7 @@
         </header>
 
         <form class="main-content-right">
+             <!-- Formulir kontak -->
             <h2 class="contact-class">Contact US</h2>
             <p>Sales akan menghubungi anda 1x24 jam setelah data anda kami terima.</p>
             <aside class="input-class">
@@ -108,6 +121,7 @@
             <span id="global-error" class="error-message">Tolong isi data dengan benar</span>
             <button type="submit">SEND</button>
         </aside>
+        <!-- Elemen untuk status pengiriman formulir -->
         <div class="loading" id="loading"></div>
         <header class="success-message" id="successMessage">
         <img src="Asset/jempol.gif" alt="Thumbs Up" width="100">
@@ -116,6 +130,7 @@
         </header>
         </form>
     </section>
+    <!-- Footer dengan informasi tambahan -->
     <footer class="footer-class">
         <article>Use this space to provide users with more information about your offer. Consider it a follow up to your headline and explain the benefits of your service or product</article>
         <div class="feature-class">
@@ -129,7 +144,9 @@
         <h2>Our Packages</h2>
         <p>Discover the perfect package for your needs. We offer a variety of options to suit every preference.</p>
     
+        <!-- Bagian paket-paket yang ditawarkan -->
         <div class="packages-container">
+            <!-- Paket Basic -->
             <article class="package basic-package">
                 <div class="package-images">
                     <img src="Asset/basic_packages.png" alt="Basic Package Image" class="package-image basic-img">
@@ -149,6 +166,7 @@
                 </div>
             </article>
     
+            <!-- Paket Standard -->
             <article class="package standard-package">
                 <div class="package-images">
                     <img src="Asset/standart_packages.png" alt="Standard Package Image" class="package-image standard-img">
@@ -169,6 +187,7 @@
                 </div>
             </article>
     
+            <!-- Paket Deluxe -->
             <article class="package deluxe-package">
                 <div class="package-images">
                     <img src="Asset/deluxe_packages.png" alt="Deluxe Package Image" class="package-image deluxe-img">
@@ -190,6 +209,7 @@
                 </div>
             </article>
     
+            <!-- Paket Family -->
             <article class="package family-package">
                 <div class="package-images">
                     <img src="Asset/family_packages.png" alt="Family Package Image" class="package-image family-img">
@@ -214,7 +234,7 @@
         </div>
     </section>
     
-    
+    <!-- bagian call us -->
     <section id="call-us" class="section">
         <h2>Contact Us</h2>
         <p><img src="Asset/call.png" alt="Icon"> Phone Number: 123-456-7890</p>
@@ -222,7 +242,7 @@
         <p><img src="Asset/maps.png" alt="Icon"> Address: Jl. Soekarno-Hatta, Kota Malang</p>
     </section>
 </main>
-
+<!-- source javascript -->
 <script src="js/main.js"></script>
 </body>
 </html>
