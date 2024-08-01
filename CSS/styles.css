@@ -105,19 +105,23 @@ nav {
     margin:0 auto;
     width:80%;
     overflow:hidden;
+    perspective: 1000px;
   }
   
   .slides{
     overflow:hidden;
     animation-name:fade;
     animation-duration:2s;
+    transform-style: preserve-3d;
     display:none;
     width:100%;
   }
   
-  img{
-    width: 800px;
-    height: 500px;
+  .slides img{
+    width: 880px;
+    height: 600px;
+    border-radius: 10px; /* Sudut melengkung pada gambar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   #dot{
@@ -283,6 +287,8 @@ nav {
     --feature-number-color-dark: black;
     --theme-label-color: black;
     --image-border-color:black;
+    --section-bg-light: #ffffff;
+    --section-bg-dark: #333333;
 }
 
 [data-theme="dark"] {
@@ -423,8 +429,17 @@ input:checked + .slider:before {
     font-size: 12px; 
 }
 
+[data-theme="light"] {
+    --section-bg: var(--section-bg-light);
+}
+
+[data-theme="dark"] {
+    --section-bg: var(--section-bg-dark);
+}
+
 .section {
     display: none; 
+    background-color: var(--section-bg);
 }
 
 .section.active {
@@ -462,6 +477,140 @@ input:checked + .slider:before {
     transform: translate(-50%, -50%); 
     z-index: 1000; 
 }
+
+.section {
+    padding: 10px;
+}
+
+#call-us {
+    background: linear-gradient(to bottom, #b3e0ff, #66b2ff);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 
+                0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 10px; /* Tambahkan padding untuk memastikan ruang di dalam elemen */
+    margin: 0; /* Pastikan margin diatur sesuai dengan tata letak */
+    width: 100%; /* Pastikan lebar penuh */
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+#call-us h2, #call-us p {
+    padding-left: 20px; /* Sesuaikan jarak sesuai kebutuhan */
+}
+
+
+#call-us p {
+    margin: 5px 0; /* Mengatur jarak atas dan bawah pada elemen p */
+}
+
+#call-us img {
+    width: 20px; /* Sesuaikan ukuran gambar */
+    height: auto;
+    vertical-align: middle; /* Menyelaraskan gambar dengan teks */
+    margin-right: 10px; /* Jarak antara gambar dan teks */
+}
+
+
+.packages-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.package {
+    position: relative; /* Agar positioning absolut pada gambar berfungsi */
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9; /* Warna latar belakang untuk tema light */
+    width: 45%; /* Mengatur lebar paket agar dua paket muat dalam satu baris */
+    box-sizing: border-box;
+    text-align: center; /* Menyelaraskan teks dan gambar ke tengah */
+    border: 2px solid #ccc; /* Menambahkan border pada paket */
+    border-radius: 10px; /* Membuat sudut border melengkung */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .package {
+    background-color: #333333; /* Warna latar belakang untuk tema dark */
+    color: #ffffff; /* Warna teks untuk tema dark */
+    border-color: #666666; /* Warna border untuk tema dark */
+}
+
+.package img.package-image {
+    width: 30%;
+    height: auto;
+    border-radius: 5px; /* Tambahkan radius jika diinginkan */
+    position: absolute; /* Agar gambar bisa diposisikan dengan tepat */
+}
+
+/* Menggeser gambar masing-masing */
+.basic-img {
+    top: 25px; /* Geser gambar dari bagian atas kontainer */
+    left: 200px; /* Geser gambar dari bagian kiri kontainer */
+}
+
+.standard-img {
+    top: 25px; /* Geser gambar dari bagian atas kontainer */
+    right: 200px; /* Geser gambar dari bagian kanan kontainer */
+}
+
+.deluxe-img {
+    bottom: 380px; /* Geser gambar dari bagian bawah kontainer */
+    left: 200px; /* Geser gambar dari bagian kiri kontainer */
+}
+
+.family-img {
+    bottom: 360px; /* Geser gambar dari bagian bawah kontainer */
+    right: 200px; /* Geser gambar dari bagian kanan kontainer */
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.pilihan_packages{
+    margin-top: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.package-footer {
+    margin-top: 20px; /* Jarak antara deskripsi dan footer */
+    text-align: center;
+}
+
+.price {
+    font-size: 1.5em; /* Ukuran font untuk harga */
+    font-weight: bold;
+    margin-bottom: 10px; /* Jarak antara harga dan tombol */
+}
+
+.original-price {
+    font-size: 1.2em;
+    color: #888; /* Warna harga yang dicoret */
+    text-decoration: line-through; /* Garis coret pada harga lama */
+    margin-right: 10px; /* Jarak antara harga lama dan harga baru */
+}
+
+.price-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: orange;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.price-button:hover {
+    background-color: orange;
+}
+
+
+
+
 
 
 
