@@ -610,20 +610,22 @@ h3 {
 
 /* Media query untuk layar dengan lebar maksimum 1200px */
 @media (max-width: 1200px) {
-   
     nav {
         flex-direction: column;
         align-items: center;
     }
-    
-    .nav-container {
-        display: flex;
-        flex-direction: column;
+
+    .left-section, .nav-container {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
         align-items: center;
+        padding: 0.5rem 0;
     }
-    
+
     .nav-item {
-        margin: 5px 0;
+        flex: 1;
+        text-align: center;
     }
 
     .main-content {
@@ -631,68 +633,158 @@ h3 {
         align-items: center;
     }
 
-    .main-content-left, .main-content-right {
-        width: 100%;
-        padding: 10px;
+    .main-content-right {
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 2rem;
     }
 
-    .package {
+    .paragraf-content {
         width: 100%;
-        margin-bottom: 20px;
-    }
-    
-    .package-footer {
+        margin-left: 0;
         text-align: center;
     }
 
-    .package .price {
-        font-size: 1.2em;
+    .item-klien {
+        width: 90%;
+        margin-left: 0;
+        justify-content: center;
     }
-    
-   
-    img {
-        width: 100%;
+
+    .packages-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .package {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Media query untuk layar dengan lebar maksimum 992px */
+@media (max-width: 992px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .logo-icon img {
+        width: 100px;
         height: auto;
+        margin-bottom: 10px;
+    }
+
+    .nav-container {
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .nav-item {
+        flex: 1;
+        padding: 0.5rem;
     }
 }
 
 /* Media query untuk layar dengan lebar maksimum 768px */
 @media (max-width: 768px) {
-    
-    .theme-switch-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+    nav {
+        padding: 0.5rem;
     }
-    
-    .theme-label {
-        margin-bottom: 10px;
+
+    .logo-icon img {
+        width: 80px;
+    }
+
+    .main-content-right input,
+    .main-content-right select,
+    .main-content-right button {
+        width: 100%;
+    }
+
+    .theme-label,
+    .theme-switch {
+        margin-left: 0;
+    }
+
+    .packages-container {
+        flex-direction: column;
+        align-items: center;
     }
 
     .package {
-        width: 90%;
+        width: 100%;
+    }
+
+    .package img.package-image {
+        width: 30%;
+        position: static;
+        margin: 10px 0;
+    }
+
+    .package-footer {
+        text-align: center;
     }
 }
 
-/* Media query untuk layar dengan lebar maksimum 480px */
-@media (max-width: 480px) {
-   
-    .theme-switch-wrapper {
+/* Media query untuk layar dengan lebar maksimum 567px */
+@media (max-width: 567px) {
+    #slider {
         width: 100%;
-        justify-content: space-between;
     }
 
-    .main-content-left, .main-content-right {
-        padding: 5px;
+    .main-title {
+        font-size: 1.5rem;
     }
 
-    .package {
+    .nav-container {
+        flex-direction: column;
         width: 100%;
     }
 
     .nav-item {
-        font-size: 14px;
+        width: 100%;
+        text-align: left;
+        border-right: none;
+        border-bottom: 1px solid black;
+        padding: 10px;
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .main-content-right {
+        padding: 1rem;
+    }
+
+    .item-klien {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .paragraf-content {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .packages-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .package {
+        width: 100%;
+    }
+
+    .package img.package-image {
+        width: 100px; /* Menyesuaikan ukuran gambar paket */
+        position: static;
+        margin: 10px 0;
     }
 }
 
