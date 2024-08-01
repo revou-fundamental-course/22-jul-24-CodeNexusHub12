@@ -632,7 +632,7 @@ h3 {
     }
 
     #slider {
-        height: 27vh; /* Menyediakan tinggi yang sesuai untuk slider */
+        height: 100vh; /* Menyediakan tinggi yang sesuai untuk slider */
         margin-bottom: 200px;
     }
 
